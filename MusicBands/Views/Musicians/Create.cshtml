@@ -1,0 +1,48 @@
+﻿@model MusicBands.Models.Musician
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="color:white">Create</h1>
+
+<h4 style="color:white">Musician</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MS_NAME" class="control-label" style="color:white"></label>
+                <input asp-for="MS_NAME" class="form-control" />
+                <span asp-validation-for="MS_NAME" class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <label asp-for="MS_BIRTH_DATE" class="control-label" style="color:white"></label>
+                <input asp-for="MS_BIRTH_DATE" class="form-control" />
+                <span asp-validation-for="MS_BIRTH_DATE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MS_YEAR" class="control-label" style="color:white"></label>
+                <input asp-for="MS_YEAR" class="form-control" />
+                <span asp-validation-for="MS_YEAR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MS_SEX" class="control-label" style="color:white"></label>
+                <input asp-for="MS_SEX" class="form-control" />
+                <span asp-validation-for="MS_SEX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

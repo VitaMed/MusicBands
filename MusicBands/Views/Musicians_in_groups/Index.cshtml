@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MusicBands.Models.Musicians_in_groups>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MS_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GR_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MUC_YEAR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MUS_LYEAR)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MS_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GR_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MUC_YEAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MUS_LYEAR)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

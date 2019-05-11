@@ -1,0 +1,28 @@
+﻿@model MusicBands.Models.Type_of_instruments
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="color:white">Details</h1>
+
+<div>
+    <h4 style="color:white">Type of instrument</h4>
+    <hr />
+    <div class="jumbotron" style="opacity:0.8">
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.IN_NAME)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.IN_NAME)
+            </dd>
+            
+        </dl>
+    </div>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
